@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WCL 2026 Sales Summary — Momentum &amp; Inner Circle</title>
+<style>
+:root{--navy:#1F3864;--blue:#2E5496;--ink:#1f2430;--mut:#7a8190;--line:#e6e9ef;--bg:#eef1f5;--card:#fff;--gold:#C9A227;--violet:#7c5cbf;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);}
+.wrap{max-width:1080px;margin:0 auto;padding:22px 20px 60px;}
+.head{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:14px;padding:22px 26px;margin-bottom:20px;}
+.head h1{margin:0 0 4px;font-size:22px;letter-spacing:.01em;}
+.head p{margin:2px 0;font-size:13px;color:#cfe0f6;}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px;}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+.kpi .lbl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);}
+.kpi .num{font-size:38px;font-weight:800;margin:6px 0 2px;color:var(--navy);line-height:1;}
+.kpi .sub{font-size:12.5px;color:var(--mut);margin-top:6px;}
+.kpi.tot{background:var(--navy);border-color:var(--navy);}
+.kpi.tot .lbl{color:#9fc0ef;} .kpi.tot .num{color:#fff;} .kpi.tot .sub{color:#b9cdea;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:18px;box-shadow:0 1px 3px rgba(20,30,50,.05);}
+.card h2{margin:0 0 16px;font-size:16px;color:var(--navy);}
+.legend{font-size:12px;color:var(--mut);margin-bottom:14px;}
+.legend .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 5px 0 12px;vertical-align:middle;}
+.dot.ic{background:var(--blue);} .dot.mo{background:var(--gold);}
+.reprow{display:grid;grid-template-columns:190px 1fr 140px;align-items:center;gap:12px;margin-bottom:11px;}
+.repname{font-size:13px;font-weight:600;}
+.bar{background:#f0f2f7;border-radius:6px;height:22px;display:flex;overflow:hidden;}
+.seg{height:100%;} .seg.ic{background:var(--blue);} .seg.mo{background:var(--gold);}
+.reptot{font-size:13px;font-weight:700;color:var(--navy);text-align:right;}
+.reptot .brk{font-weight:400;color:var(--mut);font-size:11.5px;}
+.nrbar{height:30px;border-radius:8px;display:flex;overflow:hidden;font-size:12px;font-weight:700;color:#fff;}
+.nrbar .n{background:var(--blue);display:flex;align-items:center;padding-left:12px;}
+.nrbar .r{background:var(--violet);display:flex;align-items:center;padding-left:12px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);}
+th{background:#f5f7fb;color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0;}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.tag.ic{background:#eef2fb;color:var(--blue);} .tag.mo{background:#fff4e0;color:#b5851b;}
+.pill{font-size:11px;font-weight:700;padding:1px 7px;border-radius:20px;background:#eafaf2;color:#2f9e6f;}
+.pill.ren{background:#f1ecfa;color:var(--violet);}
+.tblwrap{max-height:560px;overflow:auto;border:1px solid var(--line);border-radius:10px;}
+.filter{margin-bottom:10px;}
+.filter button{border:1px solid var(--line);background:#fff;color:var(--mut);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;margin-right:6px;font-family:inherit;}
+.filter button.on{background:var(--navy);color:#fff;border-color:var(--navy);}
+.note{font-size:12.5px;color:#4b5566;line-height:1.7;}
+.note b{color:var(--ink);}
+.foot{font-size:12px;color:var(--mut);text-align:center;margin-top:26px;}
+@media(max-width:820px){.kpis{grid-template-columns:1fr;}.reprow{grid-template-columns:120px 1fr 96px;}}
+</style></head>
+<body><div class="wrap">
+<div class="head">
+  <h1>2026 Sales Summary — Momentum &amp; Inner Circle</h1>
+  <p>Unique members since Jan 1, 2026 · deduplicated by name · source: Slack #sales</p>
+  <p>Updated Jul 21, 2026</p>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="lbl">Momentum</div><div class="num">50</div><div class="sub">unique members</div></div>
+  <div class="kpi"><div class="lbl">Inner Circle</div><div class="num">186</div><div class="sub">163 new · 23 renewal</div></div>
+  <div class="kpi tot"><div class="lbl">Combined Total</div><div class="num">236</div><div class="sub">Momentum + Inner Circle</div></div>
+</div>
+
+<div class="card">
+  <h2>Sales by salesperson · unique members closed</h2>
+  <div class="legend"><span class="dot ic"></span>Inner Circle<span class="dot mo"></span>Momentum</div>
+  <div class="reprow">
+      <div class="repname">Emmanuel Alcoran III</div>
+      <div class="bar">
+        <div class="seg ic" style="width:78.16%"></div>
+        <div class="seg mo" style="width:21.84%"></div>
+      </div>
+      <div class="reptot">174 <span class="brk">(136 IC · 38 MM)</span></div>
+    </div><div class="reprow">
+      <div class="repname">Claro Miguel Capinpuyan</div>
+      <div class="bar">
+        <div class="seg ic" style="width:18.97%"></div>
+        <div class="seg mo" style="width:5.17%"></div>
+      </div>
+      <div class="reptot">42 <span class="brk">(33 IC · 9 MM)</span></div>
+    </div><div class="reprow">
+      <div class="repname">Michael</div>
+      <div class="bar">
+        <div class="seg ic" style="width:9.20%"></div>
+        <div class="seg mo" style="width:1.72%"></div>
+      </div>
+      <div class="reptot">19 <span class="brk">(16 IC · 3 MM)</span></div>
+    </div><div class="reprow">
+      <div class="repname">Mark Ian Tutor</div>
+      <div class="bar">
+        <div class="seg ic" style="width:0.57%"></div>
+        <div class="seg mo" style="width:0.00%"></div>
+      </div>
+      <div class="reptot">1 <span class="brk">(1 IC · 0 MM)</span></div>
+    </div>
+</div>
+
+<div class="card">
+  <h2>Inner Circle · new vs renewal</h2>
+  <div class="nrbar">
+    <div class="n" style="width:87.63%">163 New</div>
+    <div class="r" style="width:12.37%">23 Renewal</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>All members</h2>
+  <div class="filter">
+    <button data-f="all" class="on">All (236)</button>
+    <button data-f="Inner Circle">Inner Circle (186)</button>
+    <button data-f="Momentum">Momentum (50)</button>
+  </div>
+  <div class="tblwrap"><table><thead><tr><th>#</th><th>Member</th><th>Program</th><th>Status</th><th>Salesperson</th></tr></thead>
+  <tbody id="rows">
+  <tr data-prog="Inner Circle"><td>1</td><td>Andrew Ikechukwu Adudu</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>2</td><td>Shayna Allen</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>3</td><td>Joann Allen</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Momentum"><td>4</td><td>Antoinette Michelle Anderson</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>5</td><td>Kevin Angulo</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>6</td><td>Esmine Anthony</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>7</td><td>Annea Ashpole</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>8</td><td>Mark Beckley</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>9</td><td>Paris Bernard</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>10</td><td>Sonya Bessong</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>11</td><td>Sandra Birdsall-Rene</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Momentum"><td>12</td><td>Deborah Bishop</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>13</td><td>Jude Blassingale</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>14</td><td>Mary Boggs</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>15</td><td>Shalonda Booth</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>16</td><td>Hervans Bourguillon</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>17</td><td>Delia Bowie</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>18</td><td>Darling Boyce</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>19</td><td>Carlean Boyd</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>20</td><td>Rozetta Brackett</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>21</td><td>Veronica Bramble</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>22</td><td>Janice Brodie</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>23</td><td>Cortina Brown</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>24</td><td>Kelly Brown</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>25</td><td>Marcellus Brown</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>26</td><td>Anthony and Faith Brown</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>27</td><td>Calicia Bryan</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>28</td><td>Latonya Buchanan</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>29</td><td>Dow Buford</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>30</td><td>Nikki Burgess</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>31</td><td>Katherine Burse</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>32</td><td>Edward Campbell</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>33</td><td>Larry Campbell</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>34</td><td>Derrick And Brenda Cannon</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>35</td><td>William Canty</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>36</td><td>Stacie Caradine</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>37</td><td>Millicent Carter</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>38</td><td>Melissa Carter</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>39</td><td>Elizabeth Charles</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>40</td><td>Geraldine Churchwell</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Momentum"><td>41</td><td>Hollise Clemons</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>42</td><td>Viola Coleman</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>43</td><td>Jennifer Collins</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>44</td><td>Keely Collins</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>45</td><td>Iohla Conway</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>46</td><td>Loretta Corbitt</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>47</td><td>Pamela Cowan</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>48</td><td>Janice Crawford</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>49</td><td>Frances Cunningham</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>50</td><td>Mario Curb</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>51</td><td>John Dandridge</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>52</td><td>Christine Daniels</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>53</td><td>James Davis</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>54</td><td>Gregory Davis</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>55</td><td>Al And Nancy Davis</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>56</td><td>Carlton Davis</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Momentum"><td>57</td><td>Sherman Dean</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>58</td><td>Melissa Defay</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>59</td><td>Tonya Pitts DeJesus</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>60</td><td>Tyra Dixon</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>61</td><td>Angela Dodd</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>62</td><td>LaCreda Elijah</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>63</td><td>Jahnia Estwick</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>64</td><td>Amy Farmer</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>65</td><td>Constance Fields</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>66</td><td>Joni Fitzgerald</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>67</td><td>Tanya Fleming</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>68</td><td>Oren And Karissa Flynn</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>69</td><td>Latisha Kearsley Folsom</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>70</td><td>Reginald Ford</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>71</td><td>Claudette Francois</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>72</td><td>Renee Freeman</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>73</td><td>Linda Gagnon</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>74</td><td>Dolores Gaunty-Porter</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>75</td><td>Anthony George</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>76</td><td>Lynnette George</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>77</td><td>Jacqueline Denise George</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>78</td><td>Jeremiah George</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>79</td><td>Sherri Glover</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>80</td><td>Beverly Gooden</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>81</td><td>Lorean And Nicole Goodwin</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>82</td><td>Kelley Goodwin</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>83</td><td>Lori Gore-Green</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>84</td><td>Charlisha Greene</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>85</td><td>Doris Lee Greer</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>86</td><td>Andre Haith</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>87</td><td>Terrance Hall</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>88</td><td>Karen Hall</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>89</td><td>Ozell Hamilton</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>90</td><td>Jeff Hannans</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>91</td><td>Carolyn Harmon</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>92</td><td>Cathy Harrell</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>93</td><td>Angela Harris</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>94</td><td>Larry Lee Jr Hatchett</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>95</td><td>Mika El Heru</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>96</td><td>Dawn Higgins</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>97</td><td>Renee Hill</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>98</td><td>Rachelle Hill</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>99</td><td>June Hilliard</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>100</td><td>Robert Hollingsworth</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>101</td><td>Sunday Hollis</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>102</td><td>Alecia Huie</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>103</td><td>Kenyette Ishmon</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>104</td><td>Nancy Regina Jackson</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>105</td><td>Anita Jackson</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>106</td><td>Jade James-Halbert</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Momentum"><td>107</td><td>Isaac Jefferson</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>108</td><td>Bonita Jenkins</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>109</td><td>Sandra Jenkins-Driscal</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Momentum"><td>110</td><td>Henri Jeune</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>111</td><td>Christel Johnson</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>112</td><td>Lynetta Johnson</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>113</td><td>Lucretia Johnson</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>114</td><td>Courtney Jones</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>115</td><td>Carmicheal Jones</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>116</td><td>Lynette Jones</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>117</td><td>Michael Jordan</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>118</td><td>Jackie Joyner</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>119</td><td>Florence And Clovis Jones Jr</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>120</td><td>James C Peters Jr</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>121</td><td>Fred Robinson Jr</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>122</td><td>Rodney Thompson Jr</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>123</td><td>Henry Mumphrey Jr</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>124</td><td>Cynthia Kinnard</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Momentum"><td>125</td><td>Andre Leslie</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>126</td><td>Jacqueline Lett</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>127</td><td>Karen Lewis</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>128</td><td>Landas Lockett</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>129</td><td>Lynn Louis</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>130</td><td>Betty Love</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>131</td><td>Cheryl And Lawrence Lynch</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>132</td><td>Michelle Macon</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>133</td><td>Rhonda Mahone</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>134</td><td>Grace Maina</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Momentum"><td>135</td><td>Necha Majors</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>136</td><td>Beverley Mariso</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>137</td><td>Siosaia Mataele</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>138</td><td>Clarence Mayo</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>139</td><td>Debra McAllister</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>140</td><td>Tim McCall</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>141</td><td>Andra McCallum</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>142</td><td>Michael McCorvey</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>143</td><td>Donna McCurry</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>144</td><td>Deitra McFadden</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>145</td><td>Gary McGhee</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>146</td><td>Denise Michel</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>147</td><td>Ogbonna Mills</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>148</td><td>Patrick Mitchell</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>149</td><td>Yvonne Mitchell</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>150</td><td>Lolita Mitchner</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>151</td><td>Philippa Moffitt-Woods</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>152</td><td>Joy Moore</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>153</td><td>Evelyn Mooring-Howard</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>154</td><td>Daryl Morrison</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>155</td><td>Coach Tony Murphy</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>156</td><td>Vicie Mustafaa</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>157</td><td>Jerry Myles</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>158</td><td>Mutindi Ndunda</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>159</td><td>Cedric Newton</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>160</td><td>Ann And Chad Nobles</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>161</td><td>Eric O&#x27;Neil</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>162</td><td>Geraldine Oliver</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>163</td><td>Dimitri Owens</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>164</td><td>Marcus Owens</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>165</td><td>Jose Mijares Palacios</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>166</td><td>Tacquita Parkman</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>167</td><td>Darrell Patterson</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>168</td><td>Rolanda Patton</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>169</td><td>John Peardon</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>170</td><td>Felecia Peeples</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>171</td><td>Jacqueline Perkins</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>172</td><td>Bobby Perry</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>173</td><td>Brenda Pettaway</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>174</td><td>Peninah Pettigrew</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>175</td><td>Samuel Pierre</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>176</td><td>Willamae Poindexter</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Momentum"><td>177</td><td>William Powell</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>178</td><td>Margie Pree</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>179</td><td>Martha Preston</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>180</td><td>John Pruitt</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>181</td><td>Lisa Randolph</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>182</td><td>Sakinah Rasheed</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>183</td><td>Alfreda Redd</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>184</td><td>Dr. Sherrian Reynolds</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>185</td><td>Antonio And Malika Rias</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>186</td><td>Vonetta Roblow</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>187</td><td>Margie Rodgers</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>188</td><td>Jeanna Rodgers</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>189</td><td>Lenzetta Rolle</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>190</td><td>Sandra And Leslie Saint</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>191</td><td>Jittaun Sanders</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>192</td><td>Marie Scott</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>193</td><td>Endalynn Seals</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>194</td><td>Javon Searcy</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>195</td><td>LaTonya Sellers</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>196</td><td>Christine Sims</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>197</td><td>Hiram Smith</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>198</td><td>Marilyn Denise Smith</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>199</td><td>Guadalupe Sotelo</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>200</td><td>Delfoncio Speer</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>201</td><td>William And Dorian Stanley</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>202</td><td>Sandy Stokes</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Momentum"><td>203</td><td>Jamie Surber</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Momentum"><td>204</td><td>Jeanine Swan</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>205</td><td>Frankie Tapps</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>206</td><td>Octavia Taylor</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>207</td><td>Toni Taylor</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>208</td><td>Rodrick Thomas</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>209</td><td>William Thompson</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Momentum"><td>210</td><td>Tiffany Thompson</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>211</td><td>Demauro D. Turner</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>212</td><td>Kimberly Turner</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>213</td><td>April Tyus-Myles</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>214</td><td>Dorian Vasquez</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>215</td><td>Jenny Vaughn</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>216</td><td>Justin Victor</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>217</td><td>Kendrick Vinson</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>218</td><td>Jonane Walker</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>219</td><td>Barbara Walton</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>220</td><td>Christy Ward</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>221</td><td>Mark Watson</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Claro Miguel Capinpuyan</td></tr>
+<tr data-prog="Inner Circle"><td>222</td><td>Robert Webb</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>223</td><td>Frank And Kathy Wesley</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Momentum"><td>224</td><td>Marvin Whaley</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>225</td><td>Candice White</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Mark Ian Tutor</td></tr>
+<tr data-prog="Inner Circle"><td>226</td><td>Mona Williams</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>227</td><td>Sonia Williams</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>228</td><td>Michael Williams</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Inner Circle"><td>229</td><td>Jeanne Williams</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Momentum"><td>230</td><td>Sonia Williams</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Michael</td></tr>
+<tr data-prog="Momentum"><td>231</td><td>Shonte Williams-Bell</td><td><span class="tag mo">Momentum</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>232</td><td>Richard Wilson</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill ren">Renewal</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>233</td><td>Annette Woolfolk</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>234</td><td>Marilyn Wright</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>235</td><td>Blanch Robin Wright</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+<tr data-prog="Inner Circle"><td>236</td><td>Rebekah Yopp</td><td><span class="tag ic">Inner Circle</span></td><td><span class="pill">New</span></td><td>Emmanuel Alcoran III</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="card">
+  <h2>How this was counted</h2>
+  <p class="note">
+  <b>Source &amp; window:</b> every Inner Circle and Momentum enrollment post in #sales since Jan 1, 2026. A "sale" = one unique member, deduplicated by name (people logged multiple times for partial or installment payments are counted once).<br>
+  <b>Who counts:</b> members who <b>enrolled</b> in a program — paid in full, financed (ClarityPay / Denefits / Eaze / in-house), or still paying in. Deposit-only holders and challenge/event tickets are excluded.<br>
+  <b>Salesperson</b> = whoever posted the deal in Slack (the closer/logger). The posts don't name a separate rep, so this is the best available attribution; the majority are logged by the sales desk lead.<br>
+  <b>Inner Circle</b> includes 23 renewals of existing members (shown in violet). Momentum entries are all new. 1 member was logged under both programs: Sonia Williams (counted once in each).
+  </p>
+</div>
+
+<div class="foot">Generated for Rolland · Wealth Creators Live · data pulled from Slack #sales</div>
+</div>
+<script>
+document.querySelectorAll('.filter button').forEach(b=>b.onclick=function(){
+  document.querySelectorAll('.filter button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  var f=b.dataset.f, n=0;
+  document.querySelectorAll('#rows tr').forEach(function(tr){
+    var show=(f==='all'||tr.dataset.prog===f);
+    tr.style.display=show?'':'none';
+    if(show){n++; tr.cells[0].textContent=n;}
+  });
+});
+</script>
+</body></html>
